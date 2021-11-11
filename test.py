@@ -126,6 +126,11 @@ if __name__ == '__main__':
     t1.test('Nevalidni soubor #04 Prazdny radek', ['tests/empty_line.txt'], intentional_error=True)
     t1.test('Nevadidni soubor #05 Bez mezery po zacatku', ['tests/no_space.txt'], intentional_error=True)
     t1.test('Nevalidni soubor #06 Spatny znak v definici', ['tests/invalid_char.txt'], intentional_error=True)
+    # Command empty
+    t1.test('Prikaz "empty" #1 Prazdna mnozina', ['tests/empty/0.txt'], 'tests/empty/0_res.txt')
+    t1.test('Prikaz "empty" #2 Neprazdna mnozina', ['tests/empty/1.txt'], 'tests/empty/1_res.txt')
+    t1.test('Prikaz "empty" #3 Relace', ['tests/empty/2.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         pass
