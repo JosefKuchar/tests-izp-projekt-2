@@ -134,7 +134,7 @@ if __name__ == '__main__':
     t1.test('Prikaz "empty" #2 Neprazdna mnozina', ['tests/empty/1.txt'], 'tests/empty/1_res.txt')
     t1.test('Prikaz "empty" #3 Relace', ['tests/empty/2.txt'], intentional_error=True)
     t1.test('Prikaz "empty" #4 Zadny parametr', ['tests/empty/no_param.txt'], intentional_error=True)
-    t1.test('Prikaz "empty" #5 Moc parametru', ['test/empty/too_many.txt'], intentional_error=True)
+    t1.test('Prikaz "empty" #5 Moc parametru', ['tests/empty/too_many.txt'], intentional_error=True)
 
     # Command card
     t1.test('Prikaz "card" #1 Prazdna mnozina', ['tests/card/0.txt'], 'tests/card/0_res.txt')
@@ -143,6 +143,15 @@ if __name__ == '__main__':
     t1.test('Prikaz "card" #4 Relace', ['tests/card/3.txt'], intentional_error=True)
     t1.test('Prikaz "card" #5 Zadny parametr', ['tests/card/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "card" #6 Moc parametru', ['tests/card/too_many.txt'], intentional_error=True)
+
+    # Command complement
+    t1.test('Prikaz "complement" #1 Prazdne univerzum, prazdna mnozina', ['tests/complement/0.txt'], 'tests/complement/0_res.txt')
+    t1.test('Prikaz "complement" #2 Univerzum a mnozina stejne prvky', ['tests/complement/1.txt'], 'tests/complement/1_res.txt')
+    t1.test('Prikaz "complement" #3 Univerzum a prazdna mnozina', ['tests/complement/2.txt'], 'tests/complement/2_res.txt')
+    t1.test('Prikaz "complement" #4 Univerzum a neprazdna mnozina', ['tests/complement/3.txt'], 'tests/complement/3_res.txt')
+    t1.test('Prikaz "complement" #5 Relace', ['tests/complement/4.txt'], intentional_error=True)
+    t1.test('Prikaz "complement" #5 Zadny parametr', ['tests/complement/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "complement" #5 Moc parametru', ['tests/complement/too_many.txt'], intentional_error=True)
 
     if args.bonus:
         # Bonusove reseni
