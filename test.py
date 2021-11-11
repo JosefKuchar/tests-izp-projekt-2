@@ -115,10 +115,12 @@ if __name__ == '__main__':
     # Testy ze zadani
     t1.test('Test ze zadani #1 (sets.txt)', ['tests/sets.txt'], 'tests/sets_res.txt')
     t1.test('Test ze zadani #2 (rel.txt)', ['tests/rel.txt'], 'tests/rel_res.txt')
+
     # Zakladni testovani argumentu
     t1.test('Bez argumentu', [], intentional_error=True)
     t1.test('Moc argumentu', ['tests/sets.txt', 'tests/rel.txt'], intentional_error=True)
     t1.test('Neexistujici soubor', ['tests/a'], intentional_error=True)
+
     # Testovani validity souboru
     t1.test('Nevalidni soubor #01 Pouze univerzum', ['tests/universe_only.txt'], intentional_error=True)
     t1.test('Nevalidni soubor #02 Spatne poradi definic', ['tests/wrong_order.txt'], intentional_error=True)
@@ -126,10 +128,21 @@ if __name__ == '__main__':
     t1.test('Nevalidni soubor #04 Prazdny radek', ['tests/empty_line.txt'], intentional_error=True)
     t1.test('Nevadidni soubor #05 Bez mezery po zacatku', ['tests/no_space.txt'], intentional_error=True)
     t1.test('Nevalidni soubor #06 Spatny znak v definici', ['tests/invalid_char.txt'], intentional_error=True)
+
     # Command empty
     t1.test('Prikaz "empty" #1 Prazdna mnozina', ['tests/empty/0.txt'], 'tests/empty/0_res.txt')
     t1.test('Prikaz "empty" #2 Neprazdna mnozina', ['tests/empty/1.txt'], 'tests/empty/1_res.txt')
     t1.test('Prikaz "empty" #3 Relace', ['tests/empty/2.txt'], intentional_error=True)
+    t1.test('Prikaz "empty" #4 Zadny parametr', ['tests/empty/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "empty" #5 Moc parametru', ['test/empty/too_many.txt'], intentional_error=True)
+
+    # Command card
+    t1.test('Prikaz "card" #1 Prazdna mnozina', ['tests/card/0.txt'], 'tests/card/0_res.txt')
+    t1.test('Prikaz "card" #2 Mnozina o velikosti 1', ['tests/card/1.txt'], 'tests/card/1_res.txt')
+    t1.test('Prikaz "card" #3 Mnozina o velikosti 5', ['tests/card/2.txt'], 'tests/card/2_res.txt')
+    t1.test('Prikaz "card" #4 Relace', ['tests/card/3.txt'], intentional_error=True)
+    t1.test('Prikaz "card" #5 Zadny parametr', ['tests/card/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "card" #6 Moc parametru', ['tests/card/too_many.txt'], intentional_error=True)
 
     if args.bonus:
         # Bonusove reseni
