@@ -1,0 +1,4 @@
+U AAA aa A
+S AAA
+S A
+C intersect 2 3

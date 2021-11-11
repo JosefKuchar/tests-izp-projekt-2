@@ -166,6 +166,16 @@ if __name__ == '__main__':
     t1.test('Prikaz "union" #10 Jeden parametr', ['tests/complement/one_param.txt'], intentional_error=True)
     t1.test('Prikaz "union" #11 Moc parametru', ['tests/complement/too_many.txt'], intentional_error=True)
 
+    # Command intersect
+    t1.test('Prikaz "intersect" #1 Cela mnozina', ['tests/intersect/1.txt'], 'tests/intersect/1_res.txt');
+    t1.test('Prikaz "intersect" #2 Casti mnoziny', ['tests/intersect/2.txt'], 'tests/intersect/2_res.txt');
+    t1.test('Prikaz "intersect" #3 Prazdna mnozina 1', ['tests/intersect/3.txt'], 'tests/intersect/3_res.txt');
+    t1.test('Prikaz "intersect" #4 Prazdna mnozina 2', ['tests/intersect/4.txt'], 'tests/intersect/4_res.txt');
+    t1.test('Prikaz "intersect" #5 Relace', ['tests/intersect/5.txt'], intentional_error=True);
+    t1.test('Prikaz "intersect" #6 Zadne parametry', ['tests/intersect/no_param.txt'], intentional_error=True);
+    t1.test('Prikaz "intersect" #7 Moc parametru', ['tests/intersect/too_many.txt'], intentional_error=True);
+    t1.test('Prikaz "intersect" #8 Malo parametru', ['tests/intersect/too_few.txt'], intentional_error=True);
+
     if args.bonus:
         # Bonusove reseni
         pass

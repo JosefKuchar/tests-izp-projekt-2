@@ -1,0 +1,4 @@
+U kol k kolo l o
+S o l kolo k kol
+S kol k kolo l o
+C intersect 2 3
