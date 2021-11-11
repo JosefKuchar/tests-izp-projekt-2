@@ -78,7 +78,7 @@ class Tester:
 
         if intentional_error and p.stderr == '':
             error = True
-            msg = 'Program nevratil na STDERR zadnou chybovou zpravu!\n'
+            msg += 'Program nevratil na STDERR zadnou chybovou zpravu!\n'
 
         if error:
             print(FAIL, test_name)
@@ -123,7 +123,9 @@ if __name__ == '__main__':
     t1.test('Nevalidni soubor #01 Pouze univerzum', ['tests/universe_only.txt'], intentional_error=True)
     t1.test('Nevalidni soubor #02 Spatne poradi definic', ['tests/wrong_order.txt'], intentional_error=True)
     t1.test('Nevalidni soubor #03 Prilis dlouhy nazev prvku', ['tests/too_long.txt'], intentional_error=True)
-
+    t1.test('Nevalidni soubor #04 Prazdny radek', ['tests/empty_line.txt'], intentional_error=True)
+    t1.test('Nevadidni soubor #05 Bez mezery po zacatku', ['tests/no_space.txt'], intentional_error=True)
+    t1.test('Nevalidni soubor #06 Spatny znak v definici', ['tests/invalid_char.txt'], intentional_error=True)
     if args.bonus:
         # Bonusove reseni
         pass
