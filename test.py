@@ -150,8 +150,21 @@ if __name__ == '__main__':
     t1.test('Prikaz "complement" #3 Univerzum a prazdna mnozina', ['tests/complement/2.txt'], 'tests/complement/2_res.txt')
     t1.test('Prikaz "complement" #4 Univerzum a neprazdna mnozina', ['tests/complement/3.txt'], 'tests/complement/3_res.txt')
     t1.test('Prikaz "complement" #5 Relace', ['tests/complement/4.txt'], intentional_error=True)
-    t1.test('Prikaz "complement" #5 Zadny parametr', ['tests/complement/no_param.txt'], intentional_error=True)
-    t1.test('Prikaz "complement" #5 Moc parametru', ['tests/complement/too_many.txt'], intentional_error=True)
+    t1.test('Prikaz "complement" #6 Zadny parametr', ['tests/complement/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "complement" #7 Moc parametru', ['tests/complement/too_many.txt'], intentional_error=True)
+
+    # Command union
+    t1.test('Prikaz "union" #01 Dve prazdne mnoziny', ['tests/union/0.txt'], 'tests/union/0_res.txt')
+    t1.test('Prikaz "union" #02 Prvni prazdna, druha neprazdna', ['tests/union/1.txt'], 'tests/union/1_res.txt')
+    t1.test('Prikaz "union" #03 Prvni neprazdna, druha prazdna', ['tests/union/2.txt'], 'tests/union/2_res.txt')
+    t1.test('Prikaz "union" #04 Mnoziny bez pruniku', ['tests/union/3.txt'], 'tests/union/3_res.txt')
+    t1.test('Prikaz "union" #05 Mnoziny s prunikem', ['tests/union/4.txt'], 'tests/union/4_res.txt')
+    t1.test('Prikaz "union" #06 Mnozina sama se sebou', ['tests/union/5.txt'], 'tests/union/5_res.txt')
+    t1.test('Prikaz "union" #07 Relace jako prvni parametr', ['tests/complement/6.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #08 Relace jako druhy parametr', ['tests/complement/7.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #09 Zadny parametr', ['tests/complement/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #10 Jeden parametr', ['tests/complement/one_param.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #11 Moc parametru', ['tests/complement/too_many.txt'], intentional_error=True)
 
     if args.bonus:
         # Bonusove reseni

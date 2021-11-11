@@ -1,0 +1,3 @@
+U a b c d
+S b a d
+S a b d
