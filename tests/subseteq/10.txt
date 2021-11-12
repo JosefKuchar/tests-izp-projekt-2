@@ -1,0 +1,4 @@
+U a b c
+R (b d)
+S a b c d
+C subseteq 3 2
