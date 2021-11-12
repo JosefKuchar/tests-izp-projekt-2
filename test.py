@@ -205,6 +205,21 @@ if __name__ == '__main__':
     t1.test('Prikaz "subseteq" #12 Jeden parametr', ['tests/subseteq/one_param.txt'], intentional_error=True)
     t1.test('Prikaz "subseteq" #13 Moc parametru', ['tests/subseteq/too_many.txt'], intentional_error=True)
 
+    # Command subseteq
+    t1.test('Prikaz "subset" #01 Prazdne mnoziny', ['tests/subset/1.txt'], 'tests/subset/1_res.txt')
+    t1.test('Prikaz "subset" #02 Prvni prazdna, druha neprazdna', ['tests/subset/2.txt'], 'tests/subset/2_res.txt')
+    t1.test('Prikaz "subset" #03 Prvni neprazdna, druha prazdna', ['tests/subset/3.txt'], 'tests/subset/3_res.txt')
+    t1.test('Prikaz "subset" #04 Dve mnoziny bez pruniku', ['tests/subset/4.txt'], 'tests/subset/4_res.txt')
+    t1.test('Prikaz "subset" #05 Mnozina sama se sebou', ['tests/subset/5.txt'], 'tests/subset/5_res.txt')
+    t1.test('Prikaz "subset" #06 Dve mnoziny s prunikem', ['tests/subset/6.txt'], 'tests/subset/6_res.txt')
+    t1.test('Prikaz "subset" #07 Dve identicke mnoziny', ['tests/subset/7.txt'], 'tests/subset/7_res.txt')
+    t1.test('Prikaz "subset" #08 Prvni podmnozina druhe', ['tests/subset/8.txt'], 'tests/subset/8_res.txt')
+    t1.test('Prikaz "subset" #09 Relace jako prvni parametr', ['tests/subset/9.txt'], intentional_error=True)
+    t1.test('Prikaz "subset" #10 Relace jako druhy parametr', ['tests/subset/10.txt'], intentional_error=True)
+    t1.test('Prikaz "subset" #11 Zadny parametr', ['tests/subset/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "subset" #12 Jeden parametr', ['tests/subset/one_param.txt'], intentional_error=True)
+    t1.test('Prikaz "subset" #13 Moc parametru', ['tests/subset/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         pass
