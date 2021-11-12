@@ -244,6 +244,16 @@ if __name__ == '__main__':
     t1.test('Prikaz "reflexive" #7 Zadny parametr', ['tests/reflexive/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "reflexive" #8 Moc parametru', ['tests/reflexive/too_many.txt'], intentional_error=True)
 
+    # Command symmetric
+    t1.test('Prikaz "symmetric" #1 Prazdne univerzum, prazdna relace', ['tests/symmetric/1.txt'], 'tests/symmetric/1_res.txt')
+    t1.test('Prikaz "symmetric" #2 Prazdna relace', ['tests/symmetric/2.txt'], 'tests/symmetric/2_res.txt')
+    t1.test('Prikaz "symmetric" #3 Symetricka relace 1', ['tests/symmetric/3.txt'], 'tests/symmetric/3_res.txt')
+    t1.test('Prikaz "symmetric" #4 Symetricka relace 2', ['tests/symmetric/4.txt'], 'tests/symmetric/4_res.txt')
+    t1.test('Prikaz "symmetric" #5 Nesymetricka relace', ['tests/symmetric/5.txt'], 'tests/symmetric/5_res.txt')
+    t1.test('Prikaz "symmetric" #6 Mnozina', ['tests/symmetric/6.txt'], intentional_error=True)
+    t1.test('Prikaz "symmetric" #7 Zadny parametr', ['tests/symmetric/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "symmetric" #8 Moc parametru', ['tests/symmetric/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         pass
