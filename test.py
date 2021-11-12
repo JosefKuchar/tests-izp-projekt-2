@@ -234,6 +234,16 @@ if __name__ == '__main__':
     t1.test('Prikaz "equals" #11 Jeden parametr', ['tests/equals/one_param.txt'], intentional_error=True)
     t1.test('Prikaz "equals" #12 Moc parametru', ['tests/equals/too_many.txt'], intentional_error=True)
 
+    # Command reflexive
+    t1.test('Prikaz "reflexive" #1 Prazdne univerzum, prazdna relace', ['tests/reflexive/1.txt'], 'tests/reflexive/1_res.txt')
+    t1.test('Prikaz "reflexive" #2 Prazdna relace', ['tests/reflexive/2.txt'], 'tests/reflexive/2_res.txt')
+    t1.test('Prikaz "reflexive" #3 Reflexivni relace 1', ['tests/reflexive/3.txt'], 'tests/reflexive/3_res.txt')
+    t1.test('Prikaz "reflexive" #4 Reflexivni relace 2', ['tests/reflexive/4.txt'], 'tests/reflexive/4_res.txt')
+    t1.test('Prikaz "reflexive" #5 Nereflexivni relace', ['tests/reflexive/5.txt'], 'tests/reflexive/5_res.txt')
+    t1.test('Prikaz "reflexive" #6 Mnozina', ['tests/reflexive/6.txt'], intentional_error=True)
+    t1.test('Prikaz "reflexive" #7 Zadny parametr', ['tests/reflexive/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "reflexive" #8 Moc parametru', ['tests/reflexive/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         pass
