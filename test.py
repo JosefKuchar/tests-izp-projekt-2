@@ -9,7 +9,7 @@
 from subprocess import run, PIPE
 import sys
 import argparse
-from typing import Counter
+from typing import Counter, Tuple
 
 OK = "\033[1;32;40m[ OK ]\033[0;37;40m"
 FAIL = "\033[1;31;40m[FAIL]\033[0;37;40m"
@@ -160,11 +160,11 @@ if __name__ == '__main__':
     t1.test('Prikaz "union" #04 Mnoziny bez pruniku', ['tests/union/3.txt'], 'tests/union/3_res.txt')
     t1.test('Prikaz "union" #05 Mnoziny s prunikem', ['tests/union/4.txt'], 'tests/union/4_res.txt')
     t1.test('Prikaz "union" #06 Mnozina sama se sebou', ['tests/union/5.txt'], 'tests/union/5_res.txt')
-    t1.test('Prikaz "union" #07 Relace jako prvni parametr', ['tests/complement/6.txt'], intentional_error=True)
-    t1.test('Prikaz "union" #08 Relace jako druhy parametr', ['tests/complement/7.txt'], intentional_error=True)
-    t1.test('Prikaz "union" #09 Zadny parametr', ['tests/complement/no_param.txt'], intentional_error=True)
-    t1.test('Prikaz "union" #10 Jeden parametr', ['tests/complement/one_param.txt'], intentional_error=True)
-    t1.test('Prikaz "union" #11 Moc parametru', ['tests/complement/too_many.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #07 Relace jako prvni parametr', ['tests/union/6.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #08 Relace jako druhy parametr', ['tests/union/7.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #09 Zadny parametr', ['tests/union/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #10 Jeden parametr', ['tests/union/one_param.txt'], intentional_error=True)
+    t1.test('Prikaz "union" #11 Moc parametru', ['tests/union/too_many.txt'], intentional_error=True)
 
     # Command intersect
     t1.test('Prikaz "intersect" #1 Cela mnozina', ['tests/intersect/1.txt'], 'tests/intersect/1_res.txt');
@@ -175,6 +175,20 @@ if __name__ == '__main__':
     t1.test('Prikaz "intersect" #6 Zadne parametry', ['tests/intersect/no_param.txt'], intentional_error=True);
     t1.test('Prikaz "intersect" #7 Moc parametru', ['tests/intersect/too_many.txt'], intentional_error=True);
     t1.test('Prikaz "intersect" #8 Malo parametru', ['tests/intersect/too_few.txt'], intentional_error=True);
+
+    # Command minus
+    t1.test('Prikaz "minus" #01 Prazdne mnoziny', ['tests/minus/1.txt'], 'tests/minus/1_res.txt')
+    t1.test('Prikaz "minus" #02 Prvni prazdna, druha neprazdna', ['tests/minus/2.txt'], 'tests/minus/2_res.txt')
+    t1.test('Prikaz "minus" #03 Prvni neprazdna, druha prazdna', ['tests/minus/3.txt'], 'tests/minus/3_res.txt')
+    t1.test('Prikaz "minus" #04 Mnozina sama se sebou', ['tests/minus/4.txt'], 'tests/minus/4_res.txt')
+    t1.test('Prikaz "minus" #05 Dve mnoziny bez pruniku', ['tests/minus/5.txt'], 'tests/minus/5_res.txt')
+    t1.test('Prikaz "minus" #06 Dve mnoziny s prunikem 1', ['tests/minus/6.txt'], 'tests/minus/6_res.txt')
+    t1.test('Prikaz "minus" #07 Dve mnoziny s prunikem 2', ['tests/minus/7.txt'], 'tests/minus/7_res.txt')
+    t1.test('Prikaz "minus" #08 Relace jako prvni parametr', ['tests/minus/8.txt'], intentional_error=True)
+    t1.test('Prikaz "minus" #09 Relace jako druhy parametr', ['tests/minus/9.txt'], intentional_error=True)
+    t1.test('Prikaz "minus" #10 Zadny parametr', ['tests/minus/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "minus" #11 Jeden parametr', ['tests/minus/one_param.txt'], intentional_error=True)
+    t1.test('Prikaz "minus" #12 Moc parametru', ['tests/minus/too_many.txt'], intentional_error=True)
 
     if args.bonus:
         # Bonusove reseni

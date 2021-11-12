@@ -1,0 +1,4 @@
+U a b c d
+R (b a)
+S c d
+C minus 3 2

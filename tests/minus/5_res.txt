@@ -1,0 +1,4 @@
+U a b c d
+S b a
+S c d
+S b a
