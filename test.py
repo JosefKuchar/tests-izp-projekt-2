@@ -254,6 +254,16 @@ if __name__ == '__main__':
     t1.test('Prikaz "symmetric" #7 Zadny parametr', ['tests/symmetric/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "symmetric" #8 Moc parametru', ['tests/symmetric/too_many.txt'], intentional_error=True)
 
+    # Command antisymmetric
+    t1.test('Prikaz "antisymmetric" #1 Prazdne univerzum, prazdna relace', ['tests/antisymmetric/1.txt'], 'tests/antisymmetric/1_res.txt')
+    t1.test('Prikaz "antisymmetric" #2 Prazna relace', ['tests/antisymmetric/2.txt'], 'tests/antisymmetric/2_res.txt')
+    t1.test('Prikaz "antisymmetric" #3 Antisymetricka relace 1', ['tests/antisymmetric/3.txt'], 'tests/antisymmetric/3_res.txt')
+    t1.test('Prikaz "antisymmetric" #4 Antisymetricka relace 2', ['tests/antisymmetric/4.txt'], 'tests/antisymmetric/4_res.txt')
+    t1.test('Prikaz "antisymmetric" #5 Neantisymetricka', ['tests/antisymmetric/5.txt'], 'tests/antisymmetric/5_res.txt')
+    t1.test('Prikaz "antisymmetric" #6 Mnozina', ['tests/antisymmetric/6.txt'], intentional_error=True)
+    t1.test('Prikaz "antisymmetric" #7 Zadny parametr', ['tests/antisymmetric/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "antisymmetric" #8 Moc parametru', ['tests/antisymmetric/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         pass
