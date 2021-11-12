@@ -220,6 +220,20 @@ if __name__ == '__main__':
     t1.test('Prikaz "subset" #12 Jeden parametr', ['tests/subset/one_param.txt'], intentional_error=True)
     t1.test('Prikaz "subset" #13 Moc parametru', ['tests/subset/too_many.txt'], intentional_error=True)
 
+    # Command equals
+    t1.test('Prikaz "equals" #01 Prazdne mnoziny', ['tests/equals/1.txt'], 'tests/equals/1_res.txt')
+    t1.test('Prikaz "equals" #02 Prvni prazdna, druha neprazdna', ['tests/equals/2.txt'], 'tests/equals/2_res.txt')
+    t1.test('Prikaz "equals" #03 Prvni neprazdna, druha prazdna', ['tests/equals/3.txt'], 'tests/equals/3_res.txt')
+    t1.test('Prikaz "equals" #04 Dve mnoziny bez pruniku', ['tests/equals/4.txt'], 'tests/equals/4_res.txt')
+    t1.test('Prikaz "equals" #05 Mnozina sama se sebou', ['tests/equals/5.txt'], 'tests/equals/5_res.txt')
+    t1.test('Prikaz "equals" #06 Dve mnoziny s prunikem', ['tests/equals/6.txt'], 'tests/equals/6_res.txt')
+    t1.test('Prikaz "equals" #07 Dve identicke mnoziny', ['tests/equals/7.txt'], 'tests/equals/7_res.txt')
+    t1.test('Prikaz "equals" #08 Relace jako prvni parametr', ['tests/equals/8.txt'], intentional_error=True)
+    t1.test('Prikaz "equals" #09 Relace jako druhy parametr', ['tests/equals/9.txt'], intentional_error=True)
+    t1.test('Prikaz "equals" #10 Zadny parametr', ['tests/equals/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "equals" #11 Jeden parametr', ['tests/equals/one_param.txt'], intentional_error=True)
+    t1.test('Prikaz "equals" #12 Moc parametru', ['tests/equals/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         pass

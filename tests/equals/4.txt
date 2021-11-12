@@ -1,0 +1,4 @@
+U a b c d
+S d c
+S a b
+C equals 2 3
