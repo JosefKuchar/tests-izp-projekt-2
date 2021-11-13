@@ -264,6 +264,16 @@ if __name__ == '__main__':
     t1.test('Prikaz "antisymmetric" #7 Zadny parametr', ['tests/antisymmetric/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "antisymmetric" #8 Moc parametru', ['tests/antisymmetric/too_many.txt'], intentional_error=True)
 
+    # Command domain
+    t1.test('Prikaz "domain" #1 Prazdne univerzum, prazdna relace', ['tests/domain/1.txt'], 'tests/domain/1_res.txt')
+    t1.test('Prikaz "domain" #2 Relace 1', ['tests/domain/2.txt'], 'tests/domain/2_res.txt')
+    t1.test('Prikaz "domain" #3 Relace 2', ['tests/domain/3.txt'], 'tests/domain/3_res.txt')
+    t1.test('Prikaz "domain" #4 Relace 3', ['tests/domain/4.txt'], 'tests/domain/4_res.txt')
+    t1.test('Prikaz "domain" #5 Relace 4', ['tests/domain/5.txt'], 'tests/domain/5_res.txt')
+    t1.test('Prikaz "domain" #6 Mnozina', ['tests/domain/6.txt'], intentional_error=True)
+    t1.test('Prikaz "domain" #7 Zadny parametr', ['tests/domain/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "domain" #8 Moc parametru', ['tests/domain/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         pass
