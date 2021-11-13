@@ -1,0 +1,6 @@
+U a b c
+S
+S a b c
+false
+S
+true

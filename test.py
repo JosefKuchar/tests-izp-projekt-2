@@ -266,7 +266,9 @@ if __name__ == '__main__':
 
     if args.bonus:
         # Bonusove reseni
-        pass
+        # Self modifying tests
+        t2.test('Sebeupravujici radky #1', ['tests/self_mod/1.txt'], 'tests/self_mod/1_res.txt')
+
 
     print('-- STATISTIKA --')
     print('Zakladni reseni:')
