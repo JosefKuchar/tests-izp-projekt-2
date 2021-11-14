@@ -270,6 +270,9 @@ if __name__ == '__main__':
     t1.test('Prikaz "transitive" #3 Tranzitivni relace 1', ['tests/transitive/3.txt'], 'tests/transitive/3_res.txt')
     t1.test('Prikaz "transitive" #4 Tranzitivni relace 2', ['tests/transitive/4.txt'], 'tests/transitive/4_res.txt')
     t1.test('Prikaz "transitive" #5 Netranzitivni relace', ['tests/transitive/5.txt'], 'tests/transitive/5_res.txt')
+    t1.test('Prikaz "transitive" #6 Mnozina', ['tests/transitive/6.txt'], intentional_error=True)
+    t1.test('Prikaz "transitive" #7 Zadny parametr', ['tests/transitive/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "transitive" #8 Moc parametru', ['tests/transitive/too_many.txt'], intentional_error=True)
 
     # Command domain
     t1.test('Prikaz "domain" #1 Prazdne univerzum, prazdna relace', ['tests/domain/1.txt'], 'tests/domain/1_res.txt')
