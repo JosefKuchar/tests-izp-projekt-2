@@ -1,0 +1,3 @@
+U a b c
+R (a b) (b b) (a c) (b c) (c c) (a a) (b a)
+C codomain 2
