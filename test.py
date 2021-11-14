@@ -264,6 +264,13 @@ if __name__ == '__main__':
     t1.test('Prikaz "antisymmetric" #7 Zadny parametr', ['tests/antisymmetric/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "antisymmetric" #8 Moc parametru', ['tests/antisymmetric/too_many.txt'], intentional_error=True)
 
+    # Command transitive
+    t1.test('Prikaz "transitive" #1 Prazdne univerzum, prazdna relace', ['tests/transitive/1.txt'], 'tests/transitive/1_res.txt')
+    t1.test('Prikaz "transitive" #2 Prazdna relace', ['tests/transitive/2.txt'], 'tests/transitive/2_res.txt')
+    t1.test('Prikaz "transitive" #3 Tranzitivni relace 1', ['tests/transitive/3.txt'], 'tests/transitive/3_res.txt')
+    t1.test('Prikaz "transitive" #4 Tranzitivni relace 2', ['tests/transitive/4.txt'], 'tests/transitive/4_res.txt')
+    t1.test('Prikaz "transitive" #5 Netranzitivni relace', ['tests/transitive/5.txt'], 'tests/transitive/5_res.txt')
+
     if args.bonus:
         # Bonusove reseni
         pass
