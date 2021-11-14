@@ -274,6 +274,16 @@ if __name__ == '__main__':
     t1.test('Prikaz "domain" #7 Zadny parametr', ['tests/domain/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "domain" #8 Moc parametru', ['tests/domain/too_many.txt'], intentional_error=True)
 
+    # Command codomain
+    t1.test('Prikaz "codomain" #1 Prazdne univerzum, prazdna relace', ['tests/codomain/1.txt'], 'tests/codomain/1_res.txt')
+    t1.test('Prikaz "codomain" #2 Relace 1', ['tests/codomain/2.txt'], 'tests/codomain/2_res.txt')
+    t1.test('Prikaz "codomain" #3 Relace 2', ['tests/codomain/3.txt'], 'tests/codomain/3_res.txt')
+    t1.test('Prikaz "codomain" #4 Relace 3', ['tests/codomain/4.txt'], 'tests/codomain/4_res.txt')
+    t1.test('Prikaz "codomain" #5 Relace 4', ['tests/codomain/5.txt'], 'tests/codomain/5_res.txt')
+    t1.test('Prikaz "codomain" #6 Mnozina', ['tests/codomain/6.txt'], intentional_error=True)
+    t1.test('Prikaz "codomain" #7 Zadny parametr', ['tests/codomain/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "codomain" #8 Moc parametru', ['tests/codomain/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         pass
