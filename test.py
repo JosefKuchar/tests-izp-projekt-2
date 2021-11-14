@@ -6,6 +6,8 @@
 # Help se vypise pres argument -h
 # Revize: 1
 
+import os
+from os import error
 from subprocess import run, PIPE
 import sys
 import argparse
@@ -13,12 +15,44 @@ from typing import Counter, Tuple
 
 OK = "\033[1;32;40m[ OK ]\033[0;37;40m"
 FAIL = "\033[1;31;40m[FAIL]\033[0;37;40m"
+WARN = "\033[1;33;40m[WARN]\033[0;37;40m"
+
+VALGRIND_LOG = 'valgrind-log.txt'
+
+def detect_valgrind():
+    try:
+        run(['valgrind'], stdout=PIPE, stderr=PIPE)
+        return True
+    except:
+        print(WARN, 'Valgrind neni nainstalovan, pro kontrolu memory leaku nainstalujte valgrind')
+        return False
 
 class Tester:
-    def __init__(self, program_name):
+    def __init__(self, program_name, valgrind):
         self.program_name = './' + program_name
         self.test_count = 0
         self.pass_count = 0
+        self.valgrind = valgrind
+
+    def check_valgrind(self, args):
+        try:
+            run(['valgrind', '--track-origins=yes', '--quiet', '--log-file=' + VALGRIND_LOG] + [self.program_name] + args, stdout=PIPE, stderr=PIPE)
+        except Exception as e:
+            print(FAIL, 'Chyba pri spousteni valgrindu!')
+            print(e)
+            return
+
+        try:
+            valgrind_log_file = open(VALGRIND_LOG, 'r')
+            valgrind_log = valgrind_log_file.read().strip()
+
+            if valgrind_log != '':
+                print(WARN, 'Valgrind detekoval memory leak nebo jinou chybu!')
+                print(valgrind_log)
+        except Exception as e:
+            print(FAIL, 'Nepodarilo se otevrit valgrind log!')
+            print(e)
+            return
 
     def compare_output(self, output, stdout):
         out_list = output.rstrip().split('\n')
@@ -94,6 +128,9 @@ class Tester:
             self.pass_count += 1
             print(OK, test_name)
 
+        if self.valgrind:
+            self.check_valgrind(args)
+
     def print_stats(self):
         print('Uspesnost: {}/{} ({:.2f}%)'.format(self.pass_count, self.test_count, (self.pass_count / self.test_count) * 100))
         pass
@@ -102,15 +139,21 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Tester 1. IZP projektu')
     parser.add_argument('prog', metavar='P', type=str, help='Jmeno programu (napriklad: pwcheck)')
     parser.add_argument('--bonus', dest='bonus', action='store_true', help='Kontrola bonusoveho parsovani argumentu')
+    parser.add_argument('--valgrind', dest='valgrind', action='store_true', help='Vypnuti kontrol pomoci valgrindu')
     parser.add_argument('--no-color', dest='color', action='store_false', help='Vystup bez barev')
     args = parser.parse_args()
 
     if not args.color:
         OK = '[ OK ]'
         FAIL = '[FAIL]'
+        WARN = '[WARN]'
 
-    t1 = Tester(args.prog)
-    t2 = Tester(args.prog)
+    valgrind = args.valgrind
+    if valgrind:
+        valgrind = detect_valgrind()
+
+    t1 = Tester(args.prog, valgrind)
+    t2 = Tester(args.prog, valgrind)
 
     # Testy ze zadani
     t1.test('Test ze zadani #1 (sets.txt)', ['tests/sets.txt'], 'tests/sets_res.txt')
@@ -319,3 +362,6 @@ if __name__ == '__main__':
     if args.bonus:
         print('Bonusove reseni')
         t2.print_stats()
+
+    if valgrind:
+        os.remove(VALGRIND_LOG)
