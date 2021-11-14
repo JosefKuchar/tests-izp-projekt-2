@@ -271,9 +271,33 @@ if __name__ == '__main__':
     t1.test('Prikaz "transitive" #4 Tranzitivni relace 2', ['tests/transitive/4.txt'], 'tests/transitive/4_res.txt')
     t1.test('Prikaz "transitive" #5 Netranzitivni relace', ['tests/transitive/5.txt'], 'tests/transitive/5_res.txt')
 
+    # Command domain
+    t1.test('Prikaz "domain" #1 Prazdne univerzum, prazdna relace', ['tests/domain/1.txt'], 'tests/domain/1_res.txt')
+    t1.test('Prikaz "domain" #2 Relace 1', ['tests/domain/2.txt'], 'tests/domain/2_res.txt')
+    t1.test('Prikaz "domain" #3 Relace 2', ['tests/domain/3.txt'], 'tests/domain/3_res.txt')
+    t1.test('Prikaz "domain" #4 Relace 3', ['tests/domain/4.txt'], 'tests/domain/4_res.txt')
+    t1.test('Prikaz "domain" #5 Relace 4', ['tests/domain/5.txt'], 'tests/domain/5_res.txt')
+    t1.test('Prikaz "domain" #6 Mnozina', ['tests/domain/6.txt'], intentional_error=True)
+    t1.test('Prikaz "domain" #7 Zadny parametr', ['tests/domain/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "domain" #8 Moc parametru', ['tests/domain/too_many.txt'], intentional_error=True)
+
+    # Command codomain
+    t1.test('Prikaz "codomain" #1 Prazdne univerzum, prazdna relace', ['tests/codomain/1.txt'], 'tests/codomain/1_res.txt')
+    t1.test('Prikaz "codomain" #2 Relace 1', ['tests/codomain/2.txt'], 'tests/codomain/2_res.txt')
+    t1.test('Prikaz "codomain" #3 Relace 2', ['tests/codomain/3.txt'], 'tests/codomain/3_res.txt')
+    t1.test('Prikaz "codomain" #4 Relace 3', ['tests/codomain/4.txt'], 'tests/codomain/4_res.txt')
+    t1.test('Prikaz "codomain" #5 Relace 4', ['tests/codomain/5.txt'], 'tests/codomain/5_res.txt')
+    t1.test('Prikaz "codomain" #6 Mnozina', ['tests/codomain/6.txt'], intentional_error=True)
+    t1.test('Prikaz "codomain" #7 Zadny parametr', ['tests/codomain/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "codomain" #8 Moc parametru', ['tests/codomain/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
-        pass
+        # Self modifying tests
+        t2.test('Sebeupravujici radky #1 Jeden complement', ['tests/self_mod/1.txt'], 'tests/self_mod/1_res.txt')
+        t2.test('Sebeupravujici radky #2 Tri complementy', ['tests/self_mod/2.txt'], 'tests/self_mod/2_res.txt')
+        t2.test('Sebeupravujici radky #3 Tri iterace (union+complement)', ['tests/self_mod/3.txt'], 'tests/self_mod/3_res.txt')
+
 
     print('-- STATISTIKA --')
     print('Zakladni reseni:')
