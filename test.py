@@ -267,7 +267,9 @@ if __name__ == '__main__':
     if args.bonus:
         # Bonusove reseni
         # Self modifying tests
-        t2.test('Sebeupravujici radky #1', ['tests/self_mod/1.txt'], 'tests/self_mod/1_res.txt')
+        t2.test('Sebeupravujici radky #1 Jeden complement', ['tests/self_mod/1.txt'], 'tests/self_mod/1_res.txt')
+        t2.test('Sebeupravujici radky #2 Tri complementy', ['tests/self_mod/2.txt'], 'tests/self_mod/2_res.txt')
+        t2.test('Sebeupravujici radky #3 Tri iterace (union+complement)', ['tests/self_mod/3.txt'], 'tests/self_mod/3_res.txt')
 
 
     print('-- STATISTIKA --')
