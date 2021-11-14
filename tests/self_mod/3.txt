@@ -1,0 +1,7 @@
+U a b c
+S b
+C union 4 3
+C union 2 5
+C complement 2
+C complement 3
+C empty 6 3
