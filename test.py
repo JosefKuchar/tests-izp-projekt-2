@@ -294,6 +294,16 @@ if __name__ == '__main__':
     t1.test('Prikaz "codomain" #7 Zadny parametr', ['tests/codomain/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "codomain" #8 Moc parametru', ['tests/codomain/too_many.txt'], intentional_error=True)
 
+    # Command function
+    t1.test('Prikaz "function" #1 Prazdne univerzum, prazdna relace', ['tests/function/1.txt'], 'tests/function/1_res.txt')
+    t1.test('Prikaz "function" #2 Prazdna relace', ['tests/function/2.txt'], 'tests/function/2_res.txt')
+    t1.test('Prikaz "function" #3 Funkce 1', ['tests/function/3.txt'], 'tests/function/3_res.txt')
+    t1.test('Prikaz "function" #4 Funkce 2', ['tests/function/4.txt'], 'tests/function/4_res.txt')
+    t1.test('Prikaz "function" #5 Neni funkce', ['tests/function/5.txt'], 'tests/function/5_res.txt')
+    t1.test('Prikaz "function" #6 Mnozina', ['tests/function/6.txt'], intentional_error=True)
+    t1.test('Prikaz "function" #7 Zadny parametr', ['tests/function/no_param.txt'], intentional_error=True)
+    t1.test('Prikaz "function" #8 Moc parametru', ['tests/function/too_many.txt'], intentional_error=True)
+
     if args.bonus:
         # Bonusove reseni
         # Self modifying tests
