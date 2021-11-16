@@ -176,6 +176,12 @@ if __name__ == '__main__':
     t1.test('Univerzum #09 Opakovani prvku 2', ['tests/universe/9.txt'], intentional_error=True)
     t1.test('Univerzum #10 Zadna mezera za U', ['tests/universe/10.txt'], intentional_error=True)
 
+    # Testovani mnozin
+    t1.test('Mnozina #1 Prvky, ktere nepatri do univerza', ['tests/set/1.txt'], intentional_error=True)
+    t1.test('Mnozina #2 Opakujici se prvek', ['tests/set/2.txt'], intentional_error=True)
+    t1.test('Mnozina #3 Delsi prvek nez maximalni delka', ['tests/set/3.txt'], intentional_error=True)
+    t1.test('Mnozina #4 Zadna mezera za S', ['tests/set/4.txt'], intentional_error=True)
+
     # Testovani validity souboru
     t1.test('Nevalidni soubor #01 Pouze univerzum', ['tests/universe_only.txt'], intentional_error=True)
     t1.test('Nevalidni soubor #02 Spatne poradi definic', ['tests/wrong_order.txt'], intentional_error=True)
