@@ -156,8 +156,8 @@ if __name__ == '__main__':
     t2 = Tester(args.prog, valgrind)
 
     # Testy ze zadani
-    t1.test('Test ze zadani #1 (sets.txt)', ['tests/sets.txt'], 'tests/sets_res.txt')
-    t1.test('Test ze zadani #2 (rel.txt)', ['tests/rel.txt'], 'tests/rel_res.txt')
+    t1.test('Test ze zadani #1 (sets.txt)', ['tests/assignment/sets.txt'], 'tests/assignment/sets_res.txt')
+    t1.test('Test ze zadani #2 (rel.txt)', ['tests/assignment/rel.txt'], 'tests/assignment/rel_res.txt')
 
     # Zakladni testovani argumentu
     t1.test('Bez argumentu', [], intentional_error=True)
@@ -193,10 +193,16 @@ if __name__ == '__main__':
     t1.test('Prikaz #1 Neexistujici', ['tests/command/1.txt'], intentional_error=True)
     t1.test('Prikaz #2 Zadna mezera za C', ['tests/command/2.txt'], intentional_error=True)
 
-    # Testovani validity souboru
-    t1.test('Nevalidni soubor #01 Pouze univerzum', ['tests/universe_only.txt'], intentional_error=True)
-    t1.test('Nevalidni soubor #02 Spatne poradi definic', ['tests/wrong_order.txt'], intentional_error=True)
-    t1.test('Nevalidni soubor #03 Prazdny radek', ['tests/empty_line.txt'], intentional_error=True)
+    # Testovani obecne validity souboru
+    t1.test('Obecne #1 Pouze univerzum', ['tests/general/universe_only.txt'], intentional_error=True)
+    t1.test('Obecne #2 Spatne poradi definic', ['tests/general/wrong_order.txt'], intentional_error=True)
+    t1.test('Obecne #3 Prazdny radek', ['tests/general/empty_line.txt'], intentional_error=True)
+    t1.test('Obecne #4 Rozlisovani velikosti pismen', ['tests/general/case_sensitivity.txt'], intentional_error=True)
+    t1.test('Obecne #5 2x univerzum', ['tests/general/multiple_universe.txt'], intentional_error=True)
+    t1.test('Obecne #6 Zadne univerzum', ['tests/general/no_universe.txt'], intentional_error=True)
+    t1.test('Obecne #7 Zadna mnozina nebo relace', ['tests/general/no_set.txt'], intentional_error=True)
+    t1.test('Obecne #8 Zadny prikaz', ['tests/general/no_command.txt'], intentional_error=True)
+    t1.test('Obecne #9 Nevalidni pocatecni pismeno', ['tests/general/invalid_start.txt'], intentional_error=True)
 
     # Command empty
     t1.test('Prikaz "empty" #1 Prazdna mnozina', ['tests/empty/0.txt'], 'tests/empty/0_res.txt')
