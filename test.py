@@ -165,15 +165,16 @@ if __name__ == '__main__':
     t1.test('Neexistujici soubor', ['tests/a'], intentional_error=True)
 
     # Testovani univerza
-    t1.test('Univerzum #1 Cisla ve jmenech prvku', ['tests/universe/1.txt'], intentional_error=True)
-    t1.test('Univerzum #2 Specialni znaky ve jmenech prvku', ['tests/universe/2.txt'], intentional_error=True)
-    t1.test('Univerzum #3 Maximalni delka jmena prvku', ['tests/universe/3.txt'], 'tests/universe/3_res.txt')
-    t1.test('Univerzum #4 Vetsi nez maximalni delka jmena prvku', ['tests/universe/4.txt'], intentional_error=True)
-    t1.test('Univerzum #5 Prvek ma nazev prikazu 1', ['tests/universe/5.txt'], intentional_error=True)
-    t1.test('Univerzum #6 Prvek ma nazev prikazu 2', ['tests/universe/6.txt'], intentional_error=True)
-    t1.test('Univerzum #7 Prvek ma false', ['tests/universe/7.txt'], intentional_error=True)
-    t1.test('Univerzum #8 Opakovani prvku 1', ['tests/universe/8.txt'], intentional_error=True)
-    t1.test('Univerzum #9 Opakovani prvku 2', ['tests/universe/9.txt'], intentional_error=True)
+    t1.test('Univerzum #01 Cisla ve jmenech prvku', ['tests/universe/1.txt'], intentional_error=True)
+    t1.test('Univerzum #02 Specialni znaky ve jmenech prvku', ['tests/universe/2.txt'], intentional_error=True)
+    t1.test('Univerzum #03 Maximalni delka jmena prvku', ['tests/universe/3.txt'], 'tests/universe/3_res.txt')
+    t1.test('Univerzum #04 Vetsi nez maximalni delka jmena prvku', ['tests/universe/4.txt'], intentional_error=True)
+    t1.test('Univerzum #05 Prvek ma nazev prikazu 1', ['tests/universe/5.txt'], intentional_error=True)
+    t1.test('Univerzum #06 Prvek ma nazev prikazu 2', ['tests/universe/6.txt'], intentional_error=True)
+    t1.test('Univerzum #07 Prvek ma false', ['tests/universe/7.txt'], intentional_error=True)
+    t1.test('Univerzum #08 Opakovani prvku 1', ['tests/universe/8.txt'], intentional_error=True)
+    t1.test('Univerzum #09 Opakovani prvku 2', ['tests/universe/9.txt'], intentional_error=True)
+    t1.test('Univerzum #10 Zadna mezera za U', ['tests/universe/10.txt'], intentional_error=True)
 
     # Testovani validity souboru
     t1.test('Nevalidni soubor #01 Pouze univerzum', ['tests/universe_only.txt'], intentional_error=True)
