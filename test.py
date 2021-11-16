@@ -136,10 +136,10 @@ class Tester:
         pass
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Tester 1. IZP projektu')
-    parser.add_argument('prog', metavar='P', type=str, help='Jmeno programu (napriklad: pwcheck)')
-    parser.add_argument('--bonus', dest='bonus', action='store_true', help='Kontrola bonusoveho parsovani argumentu')
-    parser.add_argument('--valgrind', dest='valgrind', action='store_true', help='Vypnuti kontrol pomoci valgrindu')
+    parser = argparse.ArgumentParser(description='Tester 2. IZP projektu')
+    parser.add_argument('prog', metavar='P', type=str, help='Cesta k programu (napriklad: setcal)')
+    parser.add_argument('--bonus', dest='bonus', action='store_true', help='Kontrola bonusoveho reseni')
+    parser.add_argument('--valgrind', dest='valgrind', action='store_true', help='Kontrola chyb pomoci valgrindu')
     parser.add_argument('--no-color', dest='color', action='store_false', help='Vystup bez barev')
     args = parser.parse_args()
 
@@ -181,6 +181,13 @@ if __name__ == '__main__':
     t1.test('Mnozina #2 Opakujici se prvek', ['tests/set/2.txt'], intentional_error=True)
     t1.test('Mnozina #3 Delsi prvek nez maximalni delka', ['tests/set/3.txt'], intentional_error=True)
     t1.test('Mnozina #4 Zadna mezera za S', ['tests/set/4.txt'], intentional_error=True)
+
+    # Testovani relaci
+    t1.test('Relace #1 Prvky, ktere nepatri do univerza 1', ['tests/relation/1.txt'], intentional_error=True)
+    t1.test('Relace #2 Prvky, ktere nepatri do univerza 2', ['tests/relation/2.txt'], intentional_error=True)
+    t1.test('Relace #3 Opakujici se prvek', ['tests/relation/3.txt'], intentional_error=True)
+    t1.test('Relace #4 Delsi prvek nez maximalni delka', ['tests/relation/4.txt'], intentional_error=True)
+    t1.test('Relace #5 Zadna mezera za R', ['tests/relation/5.txt'], intentional_error=True)
 
     # Testovani validity souboru
     t1.test('Nevalidni soubor #01 Pouze univerzum', ['tests/universe_only.txt'], intentional_error=True)
