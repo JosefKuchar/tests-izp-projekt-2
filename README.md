@@ -1,4 +1,6 @@
 # 🧪 Testy na 2. IZP Projekt [VUT, 2021]
+⚠️ Testy nejsou hotové, ještě se určitě změní a obsáhnou víc věcí
+
 ## Přispěvatelé 👍
 - [galloj](https://github.com/galloj)
 - [EvilKiwi](https://github.com/EvilKiwi)
