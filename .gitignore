@@ -1,2 +1,3 @@
 .vscode/
 setcal
+valgrind-log.txt

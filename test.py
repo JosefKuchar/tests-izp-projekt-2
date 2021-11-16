@@ -164,13 +164,21 @@ if __name__ == '__main__':
     t1.test('Moc argumentu', ['tests/sets.txt', 'tests/rel.txt'], intentional_error=True)
     t1.test('Neexistujici soubor', ['tests/a'], intentional_error=True)
 
+    # Testovani univerza
+    t1.test('Univerzum #1 Cisla ve jmenech prvku', ['tests/universe/1.txt'], intentional_error=True)
+    t1.test('Univerzum #2 Specialni znaky ve jmenech prvku', ['tests/universe/2.txt'], intentional_error=True)
+    t1.test('Univerzum #3 Maximalni delka jmena prvku', ['tests/universe/3.txt'], 'tests/universe/3_res.txt')
+    t1.test('Univerzum #4 Vetsi nez maximalni delka jmena prvku', ['tests/universe/4.txt'], intentional_error=True)
+    t1.test('Univerzum #5 Prvek ma nazev prikazu 1', ['tests/universe/5.txt'], intentional_error=True)
+    t1.test('Univerzum #6 Prvek ma nazev prikazu 2', ['tests/universe/6.txt'], intentional_error=True)
+    t1.test('Univerzum #7 Prvek ma false', ['tests/universe/7.txt'], intentional_error=True)
+    t1.test('Univerzum #8 Opakovani prvku 1', ['tests/universe/8.txt'], intentional_error=True)
+    t1.test('Univerzum #9 Opakovani prvku 2', ['tests/universe/9.txt'], intentional_error=True)
+
     # Testovani validity souboru
     t1.test('Nevalidni soubor #01 Pouze univerzum', ['tests/universe_only.txt'], intentional_error=True)
     t1.test('Nevalidni soubor #02 Spatne poradi definic', ['tests/wrong_order.txt'], intentional_error=True)
-    t1.test('Nevalidni soubor #03 Prilis dlouhy nazev prvku', ['tests/too_long.txt'], intentional_error=True)
-    t1.test('Nevalidni soubor #04 Prazdny radek', ['tests/empty_line.txt'], intentional_error=True)
-    t1.test('Nevadidni soubor #05 Bez mezery po zacatku', ['tests/no_space.txt'], intentional_error=True)
-    t1.test('Nevalidni soubor #06 Spatny znak v definici', ['tests/invalid_char.txt'], intentional_error=True)
+    t1.test('Nevalidni soubor #03 Prazdny radek', ['tests/empty_line.txt'], intentional_error=True)
 
     # Command empty
     t1.test('Prikaz "empty" #1 Prazdna mnozina', ['tests/empty/0.txt'], 'tests/empty/0_res.txt')
