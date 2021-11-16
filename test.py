@@ -189,6 +189,10 @@ if __name__ == '__main__':
     t1.test('Relace #4 Delsi prvek nez maximalni delka', ['tests/relation/4.txt'], intentional_error=True)
     t1.test('Relace #5 Zadna mezera za R', ['tests/relation/5.txt'], intentional_error=True)
 
+    # Testovani prikazu
+    t1.test('Prikaz #1 Neexistujici', ['tests/command/1.txt'], intentional_error=True)
+    t1.test('Prikaz #2 Zadna mezera za C', ['tests/command/2.txt'], intentional_error=True)
+
     # Testovani validity souboru
     t1.test('Nevalidni soubor #01 Pouze univerzum', ['tests/universe_only.txt'], intentional_error=True)
     t1.test('Nevalidni soubor #02 Spatne poradi definic', ['tests/wrong_order.txt'], intentional_error=True)
