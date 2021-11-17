@@ -13,9 +13,9 @@ import sys
 import argparse
 from typing import Counter, Tuple
 
-OK = "\033[1;32;40m[ OK ]\033[0;37;40m"
-FAIL = "\033[1;31;40m[FAIL]\033[0;37;40m"
-WARN = "\033[1;33;40m[WARN]\033[0;37;40m"
+OK = "\033[1;32m[ OK ]\033[0m"
+FAIL = "\033[1;31m[FAIL]\033[0m"
+WARN = "\033[1;33m[WARN]\033[0m"
 
 VALGRIND_LOG = 'valgrind-log.txt'
 
