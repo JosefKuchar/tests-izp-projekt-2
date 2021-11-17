@@ -64,7 +64,7 @@ class Tester:
         for i in range(0, len(out_list)):
             stdout_line = stdout_list[i].split(' ')
             out_line = out_list[i].split(' ')
-            if stdout_line[0] == 'R' or stdout_line[0] == 'S':
+            if stdout_line[0] in ['R', 'S', 'U']:
                 if Counter(stdout_line) != Counter(out_line):
                     return False
             elif stdout_list[i] != out_list[i]:
