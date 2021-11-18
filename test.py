@@ -404,6 +404,16 @@ if __name__ == '__main__':
         t2.test('Prikaz "closure_ref" #7 Zadny parametr', ['tests/closure_ref/no_param.txt'], intentional_error=True)
         t2.test('Prikaz "closure_ref" #8 Moc parametru', ['tests/closure_ref/too_many.txt'], intentional_error=True)
 
+        # Command closure_sym
+        t2.test('Prikaz "closure_sym" #1 Prazdne univerzum, prazdna relace', ['tests/closure_sym/1.txt'], 'tests/closure_sym/1_res.txt')
+        t2.test('Prikaz "closure_sym" #2 Prazdna relace', ['tests/closure_sym/2.txt'], 'tests/closure_sym/2_res.txt')
+        t2.test('Prikaz "closure_sym" #3 Symetricka relace', ['tests/closure_sym/3.txt'], 'tests/closure_sym/3_res.txt')
+        t2.test('Prikaz "closure_sym" #4 Nesymetricka relace', ['tests/closure_sym/4.txt'], 'tests/closure_sym/4_res.txt')
+        t2.test('Prikaz "closure_sym" #5 Mnozina', ['tests/closure_sym/5.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_sym" #6 Univerzum', ['tests/closure_sym/6.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_sym" #7 Zadny parametr', ['tests/closure_sym/no_param.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_sym" #8 Moc parametru', ['tests/closure_sym/too_many.txt'], intentional_error=True)
+
         # Self modifying tests
         t2.test('Sebeupravujici radky #1 Jeden complement', ['tests/self_mod/1.txt'], 'tests/self_mod/1_res.txt')
         t2.test('Sebeupravujici radky #2 Tri complementy', ['tests/self_mod/2.txt'], 'tests/self_mod/2_res.txt')
