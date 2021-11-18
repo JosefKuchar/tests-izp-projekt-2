@@ -1,0 +1,3 @@
+U a b c
+R (c c) (b b) (a b) (a a)
+C closure_ref 2

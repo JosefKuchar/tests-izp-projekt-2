@@ -394,6 +394,16 @@ if __name__ == '__main__':
 
     if args.bonus:
         # Bonusove reseni
+        # Command closure_ref
+        t2.test('Prikaz "closure_ref" #1 Prazdne univerzum, prazdna relace', ['tests/closure_ref/1.txt'], 'tests/closure_ref/1_res.txt')
+        t2.test('Prikaz "closure_ref" #2 Prazdna relace', ['tests/closure_ref/2.txt'], 'tests/closure_ref/2_res.txt')
+        t2.test('Prikaz "closure_ref" #3 Reflexivni relace', ['tests/closure_ref/3.txt'], 'tests/closure_ref/3_res.txt')
+        t2.test('Prikaz "closure_ref" #4 Nereflexivni relace', ['tests/closure_ref/4.txt'], 'tests/closure_ref/4_res.txt')
+        t2.test('Prikaz "closure_ref" #5 Mnozina', ['tests/closure_ref/5.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_ref" #6 Univerzum', ['tests/closure_ref/6.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_ref" #7 Zadny parametr', ['tests/closure_ref/no_param.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_ref" #8 Moc parametru', ['tests/closure_ref/too_many.txt'], intentional_error=True)
+
         # Self modifying tests
         t2.test('Sebeupravujici radky #1 Jeden complement', ['tests/self_mod/1.txt'], 'tests/self_mod/1_res.txt')
         t2.test('Sebeupravujici radky #2 Tri complementy', ['tests/self_mod/2.txt'], 'tests/self_mod/2_res.txt')
