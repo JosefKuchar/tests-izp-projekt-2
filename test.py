@@ -36,7 +36,7 @@ class Tester:
 
     def check_valgrind(self, args):
         try:
-            run(['valgrind', '--track-origins=yes', '--quiet', '--log-file=' + VALGRIND_LOG] + [self.program_name] + args, stdout=PIPE, stderr=PIPE)
+            run(['valgrind', '--track-origins=yes', '--leak-check=full','--quiet', '--log-file=' + VALGRIND_LOG] + [self.program_name] + args, stdout=PIPE, stderr=PIPE)
         except Exception as e:
             print(FAIL, 'Chyba pri spousteni valgrindu!')
             print(e)
@@ -414,10 +414,22 @@ if __name__ == '__main__':
         t2.test('Prikaz "closure_sym" #7 Zadny parametr', ['tests/closure_sym/no_param.txt'], intentional_error=True)
         t2.test('Prikaz "closure_sym" #8 Moc parametru', ['tests/closure_sym/too_many.txt'], intentional_error=True)
 
+        # Command select
+        t2.test('Prikaz "select" #1 Jednoprvkova mnozina', ['tests/select/1.txt'], 'tests/select/1_res.txt')
+        t2.test('Prikaz "select" #2 Jednoprvkova relace', ['tests/select/2.txt'], 'tests/select/2_res.txt')
+        t2.test('Prikaz "select" #3 Prazdna mnozina', ['tests/select/3.txt'], 'tests/select/3_res.txt')
+        t2.test('Prikaz "select" #4 Nevykonany radek', ['tests/select/4.txt'], 'tests/select/4_res.txt')
+        t2.test('Prikaz "select" #5 Skok na neexistujici radek', ['tests/select/5.txt'], intentional_error=True)
+        t2.test('Prikaz "select" #6 Pristup na neexistujici radek', ['tests/select/6.txt'], intentional_error=True)
+        t2.test('Prikaz "select" #7 Prazdna relace', ['tests/select/7.txt'], 'tests/select/7_res.txt')
+        t2.test('Prikaz "select" #8 Zadny parametr', ['tests/select/no_param.txt'], intentional_error=True)
+        t2.test('Prikaz "select" #9 Moc parametru', ['tests/select/too_many.txt'], intentional_error=True)
+
+
         # Self modifying tests
-        t2.test('Sebeupravujici radky #1 Jeden complement', ['tests/self_mod/1.txt'], 'tests/self_mod/1_res.txt')
-        t2.test('Sebeupravujici radky #2 Tri complementy', ['tests/self_mod/2.txt'], 'tests/self_mod/2_res.txt')
-        t2.test('Sebeupravujici radky #3 Tri iterace (union+complement)', ['tests/self_mod/3.txt'], 'tests/self_mod/3_res.txt')
+        # t2.test('Sebeupravujici radky #1 Jeden complement', ['tests/self_mod/1.txt'], 'tests/self_mod/1_res.txt')
+        # t2.test('Sebeupravujici radky #2 Tri complementy', ['tests/self_mod/2.txt'], 'tests/self_mod/2_res.txt')
+        # t2.test('Sebeupravujici radky #3 Tri iterace (union+complement)', ['tests/self_mod/3.txt'], 'tests/self_mod/3_res.txt')
 
 
     print('-- STATISTIKA --')
