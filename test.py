@@ -414,6 +414,17 @@ if __name__ == '__main__':
         t2.test('Prikaz "closure_sym" #7 Zadny parametr', ['tests/closure_sym/no_param.txt'], intentional_error=True)
         t2.test('Prikaz "closure_sym" #8 Moc parametru', ['tests/closure_sym/too_many.txt'], intentional_error=True)
 
+        # Command closure_trans
+        t2.test('Prikaz "closure_trans" #1 Prazdne univerzum, prazdna relace', ['tests/closure_trans/1.txt'], 'tests/closure_trans/1_res.txt')
+        t2.test('Prikaz "closure_trans" #2 Prazdna relace', ['tests/closure_trans/2.txt'], 'tests/closure_trans/2_res.txt')
+        t2.test('Prikaz "closure_trans" #3 Tranzitivni relace 1', ['tests/closure_trans/3.txt'], 'tests/closure_trans/3_res.txt')
+        t2.test('Prikaz "closure_trans" #4 Tranzitivni relace 2', ['tests/closure_trans/4.txt'], 'tests/closure_trans/4_res.txt')
+        t2.test('Prikaz "closure_trans" #5 Netranzitivni relace, nekolik iteraci', ['tests/closure_trans/5.txt'], 'tests/closure_trans/5_res.txt')
+        t2.test('Prikaz "closure_trans" #6 Mnozina', ['tests/closure_trans/6.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_trans" #7 Univerzum', ['tests/closure_trans/7.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_trans" #8 Zadny parametr', ['tests/closure_trans/no_param.txt'], intentional_error=True)
+        t2.test('Prikaz "closure_trans" #9 Moc parametru', ['tests/closure_trans/too_many.txt'], intentional_error=True)
+
         # Command select
         t2.test('Prikaz "select" #1 Jednoprvkova mnozina', ['tests/select/1.txt'], 'tests/select/1_res.txt')
         t2.test('Prikaz "select" #2 Jednoprvkova relace', ['tests/select/2.txt'], 'tests/select/2_res.txt')
