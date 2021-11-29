@@ -204,6 +204,13 @@ if __name__ == '__main__':
     t1.test('Obecne #8 Zadny prikaz', ['tests/general/no_command.txt'], intentional_error=True)
     t1.test('Obecne #9 Nevalidni pocatecni pismeno', ['tests/general/invalid_start.txt'], intentional_error=True)
 
+    # Testovani limitu 1000 radku
+    t1.test('Pocet radku #1 999 radku', ['tests/max_lines_count/1.txt'], 'tests/max_lines_count/1_res.txt')
+    t1.test('Pocet radku #2 1000 radku', ['tests/max_lines_count/2.txt'], 'tests/max_lines_count/2_res.txt')
+    t1.test('Pocet radku #3 1001 radku', ['tests/max_lines_count/3.txt'], intentional_error=True)
+    t1.test('Pocet radku #4 1002 radku', ['tests/max_lines_count/4.txt'], intentional_error=True)
+
+
     # Command empty
     t1.test('Prikaz "empty" #1 Prazdna mnozina', ['tests/empty/0.txt'], 'tests/empty/0_res.txt')
     t1.test('Prikaz "empty" #2 Neprazdna mnozina', ['tests/empty/1.txt'], 'tests/empty/1_res.txt')
