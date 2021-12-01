@@ -45,8 +45,9 @@ class Tester:
         try:
             valgrind_log_file = open(VALGRIND_LOG, 'r')
             valgrind_log = valgrind_log_file.read().strip()
+            valgrind_arr = valgrind_log.splitlines()
 
-            if valgrind_log != '':
+            if valgrind_log != '' and not (len(valgrind_arr) == 1 and "error calling PR_SET_PTRACER, vgdb might block" in valgrind_arr[0]):
                 print(WARN, 'Valgrind detekoval memory leak nebo jinou chybu!')
                 print(valgrind_log)
         except Exception as e:
