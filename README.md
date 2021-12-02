@@ -4,6 +4,7 @@
 ## Přispěvatelé 👍
 - [galloj](https://github.com/galloj)
 - [EvilKiwi](https://github.com/EvilKiwi)
+- [kam29](https://gitlab.com/kam29)
 
 ## Instalace
 Oficiálně je podporovaný pouze běh na Linuxu (WSL), problémy se spouštěním na Windows řešit nebudu.
