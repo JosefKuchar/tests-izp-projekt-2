@@ -28,10 +28,11 @@ def detect_valgrind():
         return False
 
 class Tester:
-    def __init__(self, program_name, valgrind):
+    def __init__(self, program_name, valgrind, stop_on_error):
         self.program_name = './' + program_name
         self.test_count = 0
         self.pass_count = 0
+        self.stop_on_error = stop_on_error
         self.valgrind = valgrind
 
     def check_valgrind(self, args):
@@ -131,6 +132,12 @@ class Tester:
 
         if self.valgrind:
             self.check_valgrind(args)
+            
+        if error and self.stop_on_error:
+            if valgrind:
+                os.remove(VALGRIND_LOG)
+            
+            exit();
 
     def print_stats(self):
         print('Uspesnost: {}/{} ({:.2f}%)'.format(self.pass_count, self.test_count, (self.pass_count / self.test_count) * 100))
@@ -142,6 +149,7 @@ if __name__ == '__main__':
     parser.add_argument('--bonus', dest='bonus', action='store_true', help='Kontrola bonusoveho reseni')
     parser.add_argument('--valgrind', dest='valgrind', action='store_true', help='Kontrola chyb pomoci valgrindu')
     parser.add_argument('--no-color', dest='color', action='store_false', help='Vystup bez barev')
+    parser.add_argument('--stop-on-error', dest='stop_on_error', action='store_true', help='Vypnout tester kdyz je chyba')
     args = parser.parse_args()
 
     if not args.color:
@@ -153,8 +161,8 @@ if __name__ == '__main__':
     if valgrind:
         valgrind = detect_valgrind()
 
-    t1 = Tester(args.prog, valgrind)
-    t2 = Tester(args.prog, valgrind)
+    t1 = Tester(args.prog, valgrind, args.stop_on_error)
+    t2 = Tester(args.prog, valgrind, args.stop_on_error)
 
     # Testy ze zadani
     t1.test('Test ze zadani #1 (sets.txt)', ['tests/assignment/sets.txt'], 'tests/assignment/sets_res.txt')
