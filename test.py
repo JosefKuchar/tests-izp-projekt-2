@@ -212,6 +212,11 @@ if __name__ == '__main__':
     t1.test('Obecne #7 Zadna mnozina nebo relace', ['tests/general/no_set.txt'], intentional_error=True)
     t1.test('Obecne #8 Zadny prikaz', ['tests/general/no_command.txt'], intentional_error=True)
     t1.test('Obecne #9 Nevalidni pocatecni pismeno', ['tests/general/invalid_start.txt'], intentional_error=True)
+    t1.test('Obecne #10 Radek s mezerou', ['tests/general/line_with_space.txt'], intentional_error=True)
+    t1.test('Obecne #11 Radek s mezerami', ['tests/general/line_with_spaces.txt'], intentional_error=True)
+    t1.test('Obecne #12 Radek s tabem', ['tests/general/line_with_tab.txt'], intentional_error=True)
+    t1.test('Obecne #13 Radek s taby', ['tests/general/line_with_tabs.txt'], intentional_error=True)
+    t1.test('Obecne #14 Radek s mezerami a taby', ['tests/general/line_with_spacetabs.txt'], intentional_error=True)
 
     # Testovani limitu 1000 radku
     t1.test('Pocet radku #1 999 radku', ['tests/max_lines_count/1.txt'], 'tests/max_lines_count/1_res.txt')
@@ -414,6 +419,9 @@ if __name__ == '__main__':
     t1.test('Prikaz "injective" #3 Moc parametru', ['tests/injective/3.txt'], intentional_error=True);
     t1.test('Prikaz "injective" #4 Spatne typy parametru', ['tests/injective/4.txt'], intentional_error=True);
     t1.test('Prikaz "injective" #5 Spatne typy parametru', ['tests/injective/5.txt'], intentional_error=True);
+    
+    # Command bijective
+    t1.test('Prikaz "bijective"', ['tests/bijective/1.txt'], 'tests/bijective/1_res.txt')
 
     if args.bonus:
         # Bonusove reseni

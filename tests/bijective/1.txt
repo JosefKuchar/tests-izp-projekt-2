@@ -1,0 +1,26 @@
+U a b c x y z w
+S a b c
+S x y z
+S x y
+S x y z w
+S
+R (x y) (a x) (b z) (c y)
+R (a x) (b a) (c z)
+R (a x) (b y)
+R (a x) (a y) (b y) (c z)
+R
+R (a x) (b y) (c x)
+R (a x) (b y) (c z)
+C bijective 7 2 3
+C bijective 8 2 3
+C bijective 9 2 3
+C bijective 10 2 3
+C bijective 11 2 3
+C bijective 11 6 6
+C bijective 13 2 6
+C bijective 13 6 3
+C bijective 13 6 6
+C bijective 12 2 3
+C bijective 12 2 4
+C bijective 13 2 3
+C bijective 13 2 5
