@@ -413,6 +413,9 @@ if __name__ == '__main__':
     t1.test('Prikaz "function" #8 Zadny parametr', ['tests/function/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "function" #9 Moc parametru', ['tests/function/too_many.txt'], intentional_error=True)
 
+    # Command surjective
+    t1.test('Prikaz "surjective"', ['tests/surjective/1.txt'], 'tests/surjective/1_res.txt')
+    
     # Command injective
     t1.test('Prikaz "injective" #1 Obsahly test', ['tests/injective/1.txt'], 'tests/injective/1_res.txt');
     t1.test('Prikaz "injective" #2 Malo parametru', ['tests/injective/2.txt'], intentional_error=True);
