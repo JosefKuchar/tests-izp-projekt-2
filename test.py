@@ -226,8 +226,8 @@ if __name__ == '__main__':
 
     # Testovani univerza jako mnoziny
     t1.test('Univerzum jako mnozina #1 Prikaz complement', ['tests/universum_set/1.txt'], 'tests/universum_set/1_res.txt')
-    t1.test('Univerzum jako mnozina #1 Prikaz empty', ['tests/universum_set/2.txt'], 'tests/universum_set/2_res.txt')
-    t1.test('Univerzum jako mnozina #1 Prikaz complement (chyba)', ['tests/universum_set/3.txt'], intentional_error=True)
+    t1.test('Univerzum jako mnozina #2 Prikaz empty', ['tests/universum_set/2.txt'], 'tests/universum_set/2_res.txt')
+    t1.test('Univerzum jako mnozina #3 Prikaz complement (chyba)', ['tests/universum_set/3.txt'], intentional_error=True)
 
 
     # Command empty
