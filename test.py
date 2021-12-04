@@ -413,6 +413,9 @@ if __name__ == '__main__':
     t1.test('Prikaz "function" #8 Zadny parametr', ['tests/function/no_param.txt'], intentional_error=True)
     t1.test('Prikaz "function" #9 Moc parametru', ['tests/function/too_many.txt'], intentional_error=True)
 
+    # Command bijective
+    t1.test('Prikaz "bijective"', ['tests/bijective/1.txt'], 'tests/bijective/1_res.txt')
+
     if args.bonus:
         # Bonusove reseni
         # Command closure_ref
