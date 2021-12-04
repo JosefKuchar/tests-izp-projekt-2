@@ -28,10 +28,11 @@ def detect_valgrind():
         return False
 
 class Tester:
-    def __init__(self, program_name, valgrind):
+    def __init__(self, program_name, valgrind, stop_on_error):
         self.program_name = './' + program_name
         self.test_count = 0
         self.pass_count = 0
+        self.stop_on_error = stop_on_error
         self.valgrind = valgrind
 
     def check_valgrind(self, args):
@@ -131,6 +132,12 @@ class Tester:
 
         if self.valgrind:
             self.check_valgrind(args)
+            
+        if error and self.stop_on_error:
+            if valgrind:
+                os.remove(VALGRIND_LOG)
+            
+            exit();
 
     def print_stats(self):
         print('Uspesnost: {}/{} ({:.2f}%)'.format(self.pass_count, self.test_count, (self.pass_count / self.test_count) * 100))
@@ -142,6 +149,7 @@ if __name__ == '__main__':
     parser.add_argument('--bonus', dest='bonus', action='store_true', help='Kontrola bonusoveho reseni')
     parser.add_argument('--valgrind', dest='valgrind', action='store_true', help='Kontrola chyb pomoci valgrindu')
     parser.add_argument('--no-color', dest='color', action='store_false', help='Vystup bez barev')
+    parser.add_argument('--stop-on-error', dest='stop_on_error', action='store_true', help='Vypnout tester kdyz je chyba')
     args = parser.parse_args()
 
     if not args.color:
@@ -153,8 +161,8 @@ if __name__ == '__main__':
     if valgrind:
         valgrind = detect_valgrind()
 
-    t1 = Tester(args.prog, valgrind)
-    t2 = Tester(args.prog, valgrind)
+    t1 = Tester(args.prog, valgrind, args.stop_on_error)
+    t2 = Tester(args.prog, valgrind, args.stop_on_error)
 
     # Testy ze zadani
     t1.test('Test ze zadani #1 (sets.txt)', ['tests/assignment/sets.txt'], 'tests/assignment/sets_res.txt')
@@ -204,6 +212,11 @@ if __name__ == '__main__':
     t1.test('Obecne #7 Zadna mnozina nebo relace', ['tests/general/no_set.txt'], intentional_error=True)
     t1.test('Obecne #8 Zadny prikaz', ['tests/general/no_command.txt'], intentional_error=True)
     t1.test('Obecne #9 Nevalidni pocatecni pismeno', ['tests/general/invalid_start.txt'], intentional_error=True)
+    t1.test('Obecne #10 Radek s mezerou', ['tests/general/line_with_space.txt'], intentional_error=True)
+    t1.test('Obecne #11 Radek s mezerami', ['tests/general/line_with_spaces.txt'], intentional_error=True)
+    t1.test('Obecne #12 Radek s tabem', ['tests/general/line_with_tab.txt'], intentional_error=True)
+    t1.test('Obecne #13 Radek s taby', ['tests/general/line_with_tabs.txt'], intentional_error=True)
+    t1.test('Obecne #14 Radek s mezerami a taby', ['tests/general/line_with_spacetabs.txt'], intentional_error=True)
 
     # Testovani limitu 1000 radku
     t1.test('Pocet radku #1 999 radku', ['tests/max_lines_count/1.txt'], 'tests/max_lines_count/1_res.txt')
@@ -402,6 +415,16 @@ if __name__ == '__main__':
 
     # Command surjective
     t1.test('Prikaz "surjective"', ['tests/surjective/1.txt'], 'tests/surjective/1_res.txt')
+    
+    # Command injective
+    t1.test('Prikaz "injective" #1 Obsahly test', ['tests/injective/1.txt'], 'tests/injective/1_res.txt');
+    t1.test('Prikaz "injective" #2 Malo parametru', ['tests/injective/2.txt'], intentional_error=True);
+    t1.test('Prikaz "injective" #3 Moc parametru', ['tests/injective/3.txt'], intentional_error=True);
+    t1.test('Prikaz "injective" #4 Spatne typy parametru', ['tests/injective/4.txt'], intentional_error=True);
+    t1.test('Prikaz "injective" #5 Spatne typy parametru', ['tests/injective/5.txt'], intentional_error=True);
+    
+    # Command bijective
+    t1.test('Prikaz "bijective"', ['tests/bijective/1.txt'], 'tests/bijective/1_res.txt')
 
     if args.bonus:
         # Bonusove reseni

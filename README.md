@@ -4,6 +4,8 @@
 ## Přispěvatelé 👍
 - [galloj](https://github.com/galloj)
 - [EvilKiwi](https://github.com/EvilKiwi)
+- [tmokenc](https://github.com/tmokenc)
+- [kam29](https://gitlab.com/kam29)
 
 ## Instalace
 Oficiálně je podporovaný pouze běh na Linuxu (WSL), problémy se spouštěním na Windows řešit nebudu.
@@ -29,7 +31,7 @@ Příklad:
 Argumenty:
 
 ```
-usage: test.py [-h] [--bonus] [--valgrind] [--no-color] P
+usage: test.py [-h] [--bonus] [--valgrind] [--no-color] [--stop-on-error] P
 
 Tester 2. IZP projektu
 
@@ -37,8 +39,9 @@ positional arguments:
   P           Cesta k programu (napriklad: setcal)
 
 optional arguments:
-  -h, --help  show this help message and exit
-  --bonus     Kontrola bonusoveho reseni
-  --valgrind  Kontrola chyb pomoci valgrindu
-  --no-color  Vystup bez barev
+  -h, --help      show this help message and exit
+  --bonus         Kontrola bonusoveho reseni
+  --valgrind      Kontrola chyb pomoci valgrindu
+  --no-color      Vystup bez barev
+  --stop-on-error Vypnout tester kdyz je chyba
 ```
