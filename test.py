@@ -224,6 +224,11 @@ if __name__ == '__main__':
     t1.test('Pocet radku #3 1001 radku', ['tests/max_lines_count/3.txt'], intentional_error=True)
     t1.test('Pocet radku #4 1002 radku', ['tests/max_lines_count/4.txt'], intentional_error=True)
 
+    # Testovani univerza jako mnoziny
+    t1.test('Univerzum jako mnozina #1 Prikaz complement', ['tests/universum_set/1.txt'], 'tests/universum_set/1_res.txt')
+    t1.test('Univerzum jako mnozina #1 Prikaz empty', ['tests/universum_set/2.txt'], 'tests/universum_set/2_res.txt')
+    t1.test('Univerzum jako mnozina #1 Prikaz complement (chyba)', ['tests/universum_set/3.txt'], intentional_error=True)
+
 
     # Command empty
     t1.test('Prikaz "empty" #1 Prazdna mnozina', ['tests/empty/0.txt'], 'tests/empty/0_res.txt')
