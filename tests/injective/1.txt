@@ -1,0 +1,26 @@
+U a b c x y z w
+S a b c
+S x y z
+S x y
+S x y z w
+S
+R (x y) (a x) (b z) (c y)
+R (a x) (b a) (c z)
+R (a x) (b y)
+R (a x) (a y) (b y) (c z)
+R
+R (a x) (b y) (c x)
+R (a x) (b y) (c z)
+C injective 7 2 3
+C injective 8 2 3
+C injective 9 2 3
+C injective 10 2 3
+C injective 11 2 3
+C injective 11 6 6
+C injective 13 2 6
+C injective 13 6 3
+C injective 13 6 6
+C injective 12 2 3
+C injective 12 2 4
+C injective 13 2 3
+C injective 13 2 5
